@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, #ff7f50, #1e90ff, #32cd32, #ff69b4);
+    background-size: 800% 800%;
+    animation: backgroundAnimation 10s ease infinite;
+}
+
+/* Animasi untuk latar belakang */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.calculator {
+    border-radius: 10px;
+    width: 320px; /* Ukuran kalkulator */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 20px;
+}
+
+.calculator-screen {
+    width: 91%;
+    height: 100px; /* Kurangi tinggi layar */
+    background-color: #252525; /* Tetap gunakan warna gelap */
+    color: white;
+    border: none;
+    text-align: right;
+    padding: 10px 15px; /* Kurangi padding agar teks lebih pas */
+    font-size: 1.8em; /* Sesuaikan ukuran teks */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 10px; /* Beri jarak antara layar dan tombol */
+    overflow-x: auto; /* Agar layar bisa scroll secara horizontal jika angka terlalu panjang */
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Pastikan ada 4 kolom */
+    gap: 10px; /* Jarak antar tombol */
+}
+
+button {
+    height: 60px; /* Tinggi tombol */
+    font-size: 1.5em;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px; /* Lebih membulat */
+}
+
+button.operator {
+    background-color: #f59e0b;
+    color: white;
+}
+
+button.equal-sign {
+    background-color: #10b981;
+    color: white;
+    grid-column: span 4; /* Tombol '=' selebar 4 kolom */
+}
+
+button:hover {
+    background-color: #e2e2e2;
+}
+
+button:active {
+    background-color: #ccc;
+}
+
+/* Rapikan teks pada tombol angka */
+button.number {
+    background-color: white;
+    color: #000; /* Pastikan teks tombol nomor berwarna hitam */
+}
